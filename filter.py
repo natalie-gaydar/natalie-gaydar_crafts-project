@@ -1,4 +1,6 @@
 def get_by_user_input(craft_data):
+    # First remove duplicate projects
+    craft_data = craft_data.drop_duplicates(subset=['Project-Title'], keep='first')
     categories = ['3D Printing', 'Arduino', 'Art', 'Boats', 'Books & Journals', 
                 'Cardboard', 'Cards', 'Christmas', 'Clay', 'Cleaning', 'Clocks', 'Costumes & Cosplay', 
                 'Digital Graphics', 'Duct Tape', 'Embroidery', 'Fashion', 'Felt', 'Fiber Arts', 'Furniture', 'Gift Wrapping', 

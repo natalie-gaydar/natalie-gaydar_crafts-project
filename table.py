@@ -1,6 +1,7 @@
 import pandas as pd
 from IPython.display import HTML, display as ipython_display
 
+
 def display_table(top_viewed: pd.DataFrame):
     clickable_titles = []
 
@@ -22,3 +23,4 @@ def display_table(top_viewed: pd.DataFrame):
 
     # Display as HTML table
     ipython_display(HTML(final_table.to_html(escape=False, index=False)))
+
