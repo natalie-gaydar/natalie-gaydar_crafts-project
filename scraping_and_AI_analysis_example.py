@@ -112,33 +112,18 @@ def scrape_URL_for_text(url):
 
         return readable_text
 
-URL = input("Url from instructables: ")
-text_content = scrape_URL_for_text(URL)
-#print(f"Scraped text content from {URL}:\n" + text_content)
+#URL = input("Url from instructables: ")
+text_content = scrape_URL_for_text("https://www.instructables.com/How-to-make-an-awesome-pencil-sketch-of-any-photog/")
+print(f"Scraped text content from https://www.instructables.com/How-to-make-an-awesome-pencil-sketch-of-any-photog/:\n" + text_content)
 
-'''
-# runthis to get multiple files in
-for endpoint in [
-    # Example pages to test with
-    "https://www.instructables.com/52-Things-I-Love-About-You-Card/",
-    "https://www.instructables.com/id/Transform-Retired-Climbing-Rope-Into-Bowls-and-Oth/",
-    "https://www.instructables.com/id/Spring-String-Eggs/",
-    "https://www.instructables.com/id/Pine-Needle-Baskets-for-Fun-Isnt-Fun-Enough/",
-    "https://www.instructables.com/id/A-Mazing-Mat/",
-    "https://www.instructables.com/id/Tin-Can-Papermaking/",
-    "https://www.instructables.com/id/DIY-Space-Embroidered-Denim-Jeans-Pocket/",
-    "https://www.instructables.com/id/How-to-Make-Professional-Looking-String-Art/",
-    ]:
-    print(f"Processing: {endpoint}")
-    print(scrape_URL_for_text(endpoint))
-'''
+input()
 
 #
 # Process text with AI to extract materials and instructions
 #
 
 from openai import OpenAI
-#from keys import OPENAI_API_KEY
+from keys import OPENAI_API_KEY
 
 def extract_materials_and_instructions(text_content, project_title=""):
 
