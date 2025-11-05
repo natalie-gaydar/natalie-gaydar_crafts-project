@@ -18,8 +18,8 @@ def display_table(top_viewed: pd.DataFrame):
     # Replace the Project-Title column with clickable version
     display_data['Clickable Project Title'] = clickable_titles
 
-    # Create final table without the original Project-Title and Instructables-link columns
-    final_table = display_data[['Clickable Project Title', 'Views', 'Favorites', 'Subcategory']]
+    display_data['Index'] = range(1, len(display_data) + 1)
+    final_table = display_data[['Index', 'Clickable Project Title', 'Views', 'Favorites', 'Subcategory']]
 
     # Display as HTML table
     ipython_display(HTML(final_table.to_html(escape=False, index=False)))
